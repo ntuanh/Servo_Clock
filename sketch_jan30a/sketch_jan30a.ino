@@ -1,6 +1,7 @@
   #include "LedServo.h"
   #include <Wire.h>
   // check push
+  // check push 2
   /* Địa chỉ của DS1307 */
   const byte DS1307 = 0x68;
   /* Số byte dữ liệu sẽ đọc từ DS1307 */
