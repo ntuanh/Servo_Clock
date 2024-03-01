@@ -1,7 +1,6 @@
   #include "LedServo.h"
   #include <Wire.h>
   // check push
-  // check push 2
   /* Địa chỉ của DS1307 */
   const byte DS1307 = 0x68;
   /* Số byte dữ liệu sẽ đọc từ DS1307 */
@@ -54,11 +53,54 @@
   }
 
   void showLegServoTime(){
+    if(minute%10==0){
+      int time_delay = 500;
+      ledservo.displayNumber(11);
+      ledservo2.displayNumber(11);
+      ledservo3.displayNumber(12);
+      ledservo4.displayNumber(12);
+      delay(time_delay);//1
+      ledservo2.displayNumber(12);
+      ledservo3.displayNumber(12);
+      ledservo4.displayNumber(11);
+      delay(time_delay);//2
+      ledservo.displayNumber(12);
+      ledservo2.displayNumber(12);
+      ledservo3.displayNumber(11);
+      delay(time_delay);//3
+      ledservo.displayNumber(15);
+      ledservo2.displayNumber(11);
+      delay(time_delay);//4
+      ledservo.displayNumber(14);
+      delay(time_delay);//5
+      ledservo.displayNumber(16);
+      delay(time_delay);//6
+      ledservo.displayNumber(13);
+      ledservo2.displayNumber(13);
+      delay(time_delay);//7
+      ledservo.displayNumber(11);
+      ledservo2.displayNumber(13);
+      ledservo3.displayNumber(13);
+      delay(time_delay);//8
+      ledservo2.displayNumber(11);
+      ledservo3.displayNumber(13);
+      ledservo4.displayNumber(13);
+      delay(time_delay);//9
+      ledservo3.displayNumber(11);
+      ledservo4.displayNumber(0);
+      delay(time_delay);//10
+      ledservo3.displayNumber(int(minute/10));
+      delay(time_delay);//11
+      ledservo2.displayNumber(int(hour%10));
+      delay(time_delay);//12
+      ledservo.displayNumber(int(hour/10));
+      delay(6000-12*time_delay);
+    }
     ledservo.displayNumber(hour/10);
     ledservo2.displayNumber(hour%10);
     ledservo3.displayNumber(minute/10);
     ledservo4.displayNumber(minute%10);
-    delay(2000);
+    delay(1000);
   }
 
   /*void readServo() {
@@ -113,7 +155,7 @@
       Serial.print(year); 
       Serial.println(); 
   }
-
+  
   void printDigits(int digits){
       // các thành phần thời gian được ngăn chách bằng dấu :
       Serial.print(":");

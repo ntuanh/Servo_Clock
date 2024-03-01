@@ -24,7 +24,7 @@ enum ServoSegment {
 
 class LedServo {
   Servo servoA, servoB, servoC, servoD, servoE, servoF, servoG;
-  int numbers[10][7];
+  int numbers[17][7];
 public:
   int onOffPosition[7][2];
   LedServo();

@@ -1,7 +1,7 @@
 #include "LedServo.h"
 
 LedServo::LedServo() {
-  int temp[10][7] = {
+  int temp[17][7] = {// sửa mảng chỗ này để thêm (2 chỗ )
     { ON_LED, ON_LED, ON_LED, ON_LED, ON_LED, ON_LED, OFF_LED },      // 0
     { OFF_LED, ON_LED, ON_LED, OFF_LED, OFF_LED, OFF_LED, OFF_LED },  // 1
     { ON_LED, ON_LED, OFF_LED, ON_LED, ON_LED, OFF_LED, ON_LED },     // 2
@@ -11,7 +11,14 @@ LedServo::LedServo() {
     { ON_LED, OFF_LED, ON_LED, ON_LED, ON_LED, ON_LED, ON_LED },      // 6
     { ON_LED, ON_LED, ON_LED, OFF_LED, OFF_LED, OFF_LED, OFF_LED },   // 7
     { ON_LED, ON_LED, ON_LED, ON_LED, ON_LED, ON_LED, ON_LED },       // 8
-    { ON_LED, ON_LED, ON_LED, ON_LED, OFF_LED, ON_LED, ON_LED }       // 9
+    { ON_LED, ON_LED, ON_LED, ON_LED, OFF_LED, ON_LED, ON_LED },       // 9
+    {ON_LED, ON_LED, ON_LED, ON_LED, OFF_LED, ON_LED, ON_LED},
+    {OFF_LED,OFF_LED,OFF_LED,OFF_LED,OFF_LED,OFF_LED,OFF_LED },        //zero   11
+    {OFF_LED,OFF_LED,OFF_LED,ON_LED,OFF_LED,OFF_LED,OFF_LED},         // bật dưới  12
+    {ON_LED,OFF_LED,OFF_LED,OFF_LED,OFF_LED,OFF_LED,OFF_LED},         // bật trên   13 
+    {OFF_LED,OFF_LED,OFF_LED,OFF_LED,ON_LED,ON_LED,OFF_LED},           //  bật trái  14
+    {OFF_LED,OFF_LED,OFF_LED,ON_LED,ON_LED,OFF_LED,OFF_LED},   // trái dưới 15
+    {ON_LED,OFF_LED,OFF_LED,OFF_LED,OFF_LED,ON_LED,OFF_LED}    // trái trên 16
   };
   memcpy(numbers, temp, sizeof(temp));
 
@@ -43,7 +50,7 @@ void LedServo::init(int pina, int pinb, int pinc, int pind, int pine, int pinf, 
   writeServoSeg(SEG_E, onOffPosition[4][ON_LED]);
   writeServoSeg(SEG_F, onOffPosition[5][ON_LED]);
   writeServoSeg(SEG_G, onOffPosition[6][ON_LED]);
-  delay(1000);
+  //delay(1000);
 }
 void LedServo::loadServoOnOffPosition(int onOffPosition[7][2]) {
   memcpy(this->onOffPosition, onOffPosition, sizeof(this->onOffPosition));
