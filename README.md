@@ -2,3 +2,4 @@
 ### đây là version1 sử dụng arduino mega và module cảm biến thời gian và hiển thị bằng cách xoay động cơ servo
 ###### có thêm hiệu ứng khi đến phút x9 sang y0
 <img src = "C:\Users\Admin\OneDrive\Hình ảnh\Ảnh chụp màn hình\Screenshot 2024-02-04 020251.png" width="300">
+<img src="C:\Users\Admin\OneDrive\Hình ảnh\Ảnh chụp màn hình\Screenshot 2024-02-04 020251.png" width="300" alt="Android demo app" />
