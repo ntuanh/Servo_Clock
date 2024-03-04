@@ -28,7 +28,7 @@
     Serial.begin(9600);
     Wire.begin();
     /* cài đặt thời gian cho module */
-    //setTime(14, 44, 00, 6, 2, 2, 24); // 12:30:45 CN 08-02-2015
+    //setTime(16, 55, 00, 6, 2, 2, 24); // 12:30:45 CN 08-02-2015
     Serial.println("Started...........");
   }
 
@@ -53,7 +53,7 @@
   }
 
   void showLegServoTime(){
-    if(minute%10==0){
+    if((hour == 12 && minute ==0 )||(hour == 17 && minute ==30)){
       int time_delay = 500;
       ledservo.displayNumber(11);
       ledservo2.displayNumber(11);
